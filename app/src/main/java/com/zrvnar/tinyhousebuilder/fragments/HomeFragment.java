@@ -1,4 +1,4 @@
-package com.zrvnar.tinyhousebuilder;
+package com.zrvnar.tinyhousebuilder.fragments;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.zrvnar.tinyhousebuilder.R;
 
 /**
  * A simple {@link Fragment} subclass.
