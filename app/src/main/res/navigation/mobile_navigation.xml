@@ -12,6 +12,6 @@
     <fragment
         android:id="@+id/dataTypeFragment"
         android:name="com.zrvnar.tinyhousebuilder.listView.DataTypeFragment"
-        android:label="fragment_data_type"
+        android:label="List of Builders"
         tools:layout="@layout/fragment_data_type" />
 </navigation>

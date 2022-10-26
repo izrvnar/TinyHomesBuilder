@@ -24,6 +24,8 @@
         android:layout_marginTop="36dp"
         android:text="Type"
         android:textSize="@dimen/subtitleText"
+        app:layout_constraintEnd_toStartOf="@+id/dataLocationText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataNameText" />
 
@@ -31,10 +33,10 @@
         android:id="@+id/dataLocationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
         android:layout_marginTop="112dp"
+        android:layout_marginEnd="24dp"
         android:text="Location"
         android:textSize="@dimen/subtitleText"
-        app:layout_constraintStart_toEndOf="@+id/dataTypeText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

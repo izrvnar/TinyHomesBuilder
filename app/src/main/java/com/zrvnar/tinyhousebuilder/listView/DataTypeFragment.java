@@ -67,15 +67,15 @@ public class DataTypeFragment extends Fragment {
         ListView listView = view.findViewById(R.id.dataTypeListView);
         ArrayList<DataType> dataTypes = new ArrayList<>();
         dataTypes.add(new DataType("Jims Landscaping", "Landscaper", "Colorado"));
-        dataTypes.add(new DataType("","Painter","Louisiana"));
-        dataTypes.add(new DataType("","Cement Mason","Pennsylvania"));
-        dataTypes.add(new DataType("","Plumber","Connecticut"));
-        dataTypes.add(new DataType("","Stucco Mason","New York"));
-        dataTypes.add(new DataType("","Electrician","Texas"));
-        dataTypes.add(new DataType("","Doors, Frames & Hardware","California"));
-        dataTypes.add(new DataType("","Drywall & Acoustical (FED)","Minnesota"));
-        dataTypes.add(new DataType("","HVAC","South Carolina"));
-        dataTypes.add(new DataType("","Kitchen","Ohio"));
+        dataTypes.add(new DataType("Clean Painters","Painter","Louisiana"));
+        dataTypes.add(new DataType("ACE Masonry","Cement Mason","Pennsylvania"));
+        dataTypes.add(new DataType("First Choice","Plumber","Connecticut"));
+        dataTypes.add(new DataType("Cielza Stucco","Stucco Mason","New York"));
+        dataTypes.add(new DataType("Honey","Electrician","Texas"));
+        dataTypes.add(new DataType("Anchor","Doors, Frames & Hardware","California"));
+        dataTypes.add(new DataType("Dan Whitmore","Drywall & Acoustical (FED)","Minnesota"));
+        dataTypes.add(new DataType("Handy Bros","HVAC","South Carolina"));
+        dataTypes.add(new DataType("Windmill","Kitchen","Ohio"));
 
 
 
