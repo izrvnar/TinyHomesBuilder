@@ -81,7 +81,8 @@ public class DataTypeFragment extends Fragment {
 
         //TODO: Add custom view
         CustomViewListAdapter customViewListAdapter = new CustomViewListAdapter(getContext(), dataTypes);
-        listView.setAdapter(customViewListAdapter);
+        CustomViewListAdapter2 customViewListAdapter2 = new CustomViewListAdapter2(getContext(), dataTypes);
+        listView.setAdapter(customViewListAdapter2);
 
         return view;
     }

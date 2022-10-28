@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/dataTypeFragment">
+    app:startDestination="@id/nav_listView">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.zrvnar.tinyhousebuilder.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/dataTypeFragment"
+        android:id="@+id/nav_listView"
         android:name="com.zrvnar.tinyhousebuilder.listView.DataTypeFragment"
         android:label="List of Builders"
         tools:layout="@layout/fragment_data_type" />
