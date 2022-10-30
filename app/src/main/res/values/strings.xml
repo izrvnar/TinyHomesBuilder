@@ -19,17 +19,15 @@
 
     <string name="listViewLayout"></string>
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="list_header">List Layout</string>
+    <string name="recycleView_header">Recycle Layout</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+
+    <!-- Switch Preferences -->
+    <string name="recycle_title">Grid View</string>
+    <string name="grid_summary_on">Grid View
     </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="list_summary_off">List View</string>
 </resources>

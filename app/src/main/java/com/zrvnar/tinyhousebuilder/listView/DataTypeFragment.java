@@ -1,8 +1,10 @@
 package com.zrvnar.tinyhousebuilder.listView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +66,12 @@ public class DataTypeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data_type, container, false);
+
+        // importing the settings
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean isChecked = preferences.getBoolean("listViewSwitch",false);
+
+        // populating list view
         ListView listView = view.findViewById(R.id.dataTypeListView);
         ArrayList<DataType> dataTypes = new ArrayList<>();
         dataTypes.add(new DataType("Jims Landscaping", "Landscaper", "Colorado"));
@@ -79,10 +87,14 @@ public class DataTypeFragment extends Fragment {
 
 
 
-        //TODO: Add custom view
+        //Adding the custom list view adapters to the view
         CustomViewListAdapter customViewListAdapter = new CustomViewListAdapter(getContext(), dataTypes);
         CustomViewListAdapter2 customViewListAdapter2 = new CustomViewListAdapter2(getContext(), dataTypes);
-        listView.setAdapter(customViewListAdapter2);
+        listView.setAdapter(customViewListAdapter);
+
+        if (isChecked){
+            listView.setAdapter(customViewListAdapter2);
+        }
 
         return view;
     }
