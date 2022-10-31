@@ -8,7 +8,7 @@
             app:key="listViewSwitch"
             app:summaryOff="@string/list_summary_off"
             app:summaryOn="@string/grid_summary_on"
-            app:title="@string/listViewLayout" />
+            app:title="@string/listView_title" />
 
     </PreferenceCategory>
 

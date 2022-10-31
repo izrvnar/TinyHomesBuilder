@@ -21,13 +21,13 @@
     <!-- Preference Titles -->
     <string name="list_header">List Layout</string>
     <string name="recycleView_header">Recycle Layout</string>
+    <string name="listView_title">List View Layout</string>
 
     <!-- Messages Preferences -->
 
 
     <!-- Switch Preferences -->
     <string name="recycle_title">Grid View</string>
-    <string name="grid_summary_on">Grid View
-    </string>
-    <string name="list_summary_off">List View</string>
+    <string name="grid_summary_on">Complex View</string>
+    <string name="list_summary_off">Simple View</string>
 </resources>
