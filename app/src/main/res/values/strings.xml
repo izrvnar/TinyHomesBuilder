@@ -10,4 +10,24 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="companyNameLabel">Company Name:</string>
+    <string name="typeLabel">Type:</string>
+    <string name="locationLabel">Location:</string>
+
+    <string name="listViewLayout"></string>
+    <!-- Preference Titles -->
+    <string name="list_header">List Layout</string>
+    <string name="recycleView_header">Recycle Layout</string>
+    <string name="listView_title">List View Layout</string>
+
+    <!-- Messages Preferences -->
+
+
+    <!-- Switch Preferences -->
+    <string name="recycle_title">Grid View</string>
+    <string name="grid_summary_on">Complex View</string>
+    <string name="list_summary_off">Simple View</string>
 </resources>
