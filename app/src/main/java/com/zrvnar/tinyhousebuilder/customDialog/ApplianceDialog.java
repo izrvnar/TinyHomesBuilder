@@ -23,6 +23,7 @@ public class ApplianceDialog extends DialogFragment {
         builder.setView(inflater.inflate(R.layout.custom_dialog, null))
                 .setPositiveButton(R.string.saveButtonText, (dialog, which) -> {
                     //TODO: Create a appliance object and save it here
+
                 })
                 .setNegativeButton(R.string.cancelButtonText, (dialog, which) -> {
                     ApplianceDialog.this.getDialog().cancel();
