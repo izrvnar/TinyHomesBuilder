@@ -1,8 +1,10 @@
-package com.zrvnar.tinyhousebuilder;
+package com.zrvnar.tinyhousebuilder.fragments;
 
 import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.zrvnar.tinyhousebuilder.R;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 

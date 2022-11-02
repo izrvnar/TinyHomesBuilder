@@ -16,6 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.zrvnar.tinyhousebuilder.customDialog.ApplianceDialog;
 import com.zrvnar.tinyhousebuilder.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                ApplianceDialog applianceDialog = new ApplianceDialog();
+                applianceDialog.show(getSupportFragmentManager(), "");
+
             }
         });
         DrawerLayout drawer = binding.drawerLayout;

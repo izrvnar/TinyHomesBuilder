@@ -30,4 +30,11 @@
     <string name="recycle_title">Grid View</string>
     <string name="grid_summary_on">Complex View</string>
     <string name="list_summary_off">Simple View</string>
+
+    <!-- Custom Dialog-->
+    <string name="applicanceHint">Appliance Name</string>
+    <string name="kwhHint">Kwh</string>
+    <string name="quantityHint">Quantity</string>
+    <string name="saveButtonText">Save</string>
+    <string name="cancelButtonText">Cancel</string>
 </resources>
