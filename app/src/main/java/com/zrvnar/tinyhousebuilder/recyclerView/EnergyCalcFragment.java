@@ -3,12 +3,17 @@ package com.zrvnar.tinyhousebuilder.recyclerView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zrvnar.tinyhousebuilder.R;
+import com.zrvnar.tinyhousebuilder.pojo.Appliance;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +65,17 @@ public class EnergyCalcFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_energy_calc, container, false);
+        View view = inflater.inflate(R.layout.fragment_energy_calc, container, false);
+        ArrayList<Appliance> applianceArrayList = new ArrayList<>();
+        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        applianceArrayList.add(new Appliance("TV", 100,2));
+        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        RecyclerView recyclerView = view.findViewById(R.id.recycle);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new ApplianceRecycleViewAdapter(applianceArrayList));
+        return view;
     }
 }
