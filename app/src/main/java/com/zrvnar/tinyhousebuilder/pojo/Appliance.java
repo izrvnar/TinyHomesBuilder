@@ -1,7 +1,5 @@
 package com.zrvnar.tinyhousebuilder.pojo;
 
-import java.util.ArrayList;
-
 public class Appliance {
     private String name;
     private int kwh;
@@ -41,4 +39,5 @@ public class Appliance {
     public String toString() {
         return this.name;
     }
+
 }

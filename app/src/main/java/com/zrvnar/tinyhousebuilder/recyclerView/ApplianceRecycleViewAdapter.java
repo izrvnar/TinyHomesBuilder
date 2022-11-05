@@ -26,7 +26,7 @@ public class ApplianceRecycleViewAdapter extends RecyclerView.Adapter<ApplianceR
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view =
                 LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.recycle_row, null);
+                        .inflate(R.layout.recycle_row, parent, false);
         return new CustomViewHolder(view);
     }
 
