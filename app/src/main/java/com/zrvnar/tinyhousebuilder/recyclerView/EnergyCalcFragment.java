@@ -1,8 +1,11 @@
 package com.zrvnar.tinyhousebuilder.recyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -66,6 +69,12 @@ public class EnergyCalcFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_energy_calc, container, false);
+
+        // preferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean isChecked = preferences.getBoolean("gridViewSwitch",false);
+
+
         ArrayList<Appliance> applianceArrayList = new ArrayList<>();
         applianceArrayList.add(new Appliance("LightBulb", 35,1));
         applianceArrayList.add(new Appliance("TV", 100,2));
@@ -74,8 +83,17 @@ public class EnergyCalcFragment extends Fragment {
         applianceArrayList.add(new Appliance("LightBulb", 35,1));
         applianceArrayList.add(new Appliance("LightBulb", 35,1));
         RecyclerView recyclerView = view.findViewById(R.id.recycle);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ApplianceRecycleViewAdapter(applianceArrayList));
+
+        //toggle for grid view
+        if (isChecked){
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+            recyclerView.setAdapter(new ApplianceRecycleViewAdapterGrid(applianceArrayList));
+        }
+
+
         return view;
     }
 }
