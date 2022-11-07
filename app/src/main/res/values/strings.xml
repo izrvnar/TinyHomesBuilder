@@ -33,6 +33,7 @@
 
     <!-- Custom Dialog-->
     <string name="applicanceHint">Appliance Name</string>
+    <string name="applianceLabelText">Appliance</string>
     <string name="kwhHint">Kwh</string>
     <string name="quantityHint">Quantity</string>
     <string name="saveButtonText">Save</string>

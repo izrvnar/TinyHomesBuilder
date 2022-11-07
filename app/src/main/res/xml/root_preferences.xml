@@ -17,7 +17,7 @@
 
 
         <SwitchPreferenceCompat
-            app:key="attachment"
+            app:key="gridViewSwitch"
             app:summaryOff="@string/list_summary_off"
             app:summaryOn="@string/grid_summary_on"
             app:title="@string/recycle_title" />
