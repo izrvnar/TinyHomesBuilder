@@ -38,4 +38,7 @@
     <string name="quantityHint">Quantity</string>
     <string name="saveButtonText">Save</string>
     <string name="cancelButtonText">Cancel</string>
+
+    <!-- Nav Title-->
+    <string name="energy_calc">Energy Calculator</string>
 </resources>

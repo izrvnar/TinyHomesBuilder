@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.zrvnar.tinyhousebuilder.R;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
+import com.zrvnar.tinyhousebuilder.pojo.ApplianceSingleton;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,9 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class EnergyCalcFragment extends Fragment {
+    ApplianceRecycleViewAdapterGrid adapterGrid;
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,6 +70,13 @@ public class EnergyCalcFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        adapterGrid.notifyDataSetChanged();
+        super.onResume();
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_energy_calc, container, false);
@@ -75,7 +86,7 @@ public class EnergyCalcFragment extends Fragment {
         boolean isChecked = preferences.getBoolean("gridViewSwitch",false);
 
 
-        ArrayList<Appliance> applianceArrayList = new ArrayList<>();
+        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
         applianceArrayList.add(new Appliance("LightBulb", 35,1));
         applianceArrayList.add(new Appliance("TV", 100,2));
         applianceArrayList.add(new Appliance("LightBulb", 35,1));
@@ -86,11 +97,12 @@ public class EnergyCalcFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ApplianceRecycleViewAdapter(applianceArrayList));
+        adapterGrid = new ApplianceRecycleViewAdapterGrid(applianceArrayList);
 
         //toggle for grid view
         if (isChecked){
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-            recyclerView.setAdapter(new ApplianceRecycleViewAdapterGrid(applianceArrayList));
+            recyclerView.setAdapter(adapterGrid);
         }
 
 

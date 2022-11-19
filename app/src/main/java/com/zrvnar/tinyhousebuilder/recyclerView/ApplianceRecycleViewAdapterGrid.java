@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.zrvnar.tinyhousebuilder.R;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
+import com.zrvnar.tinyhousebuilder.pojo.ApplianceSingleton;
 
 import java.util.ArrayList;
 
 public class ApplianceRecycleViewAdapterGrid extends RecyclerView.Adapter<ApplianceRecycleViewAdapterGrid.CustomViewHolder> {
-    ArrayList<Appliance> applianceArrayList;
+    ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
 
     public ApplianceRecycleViewAdapterGrid(ArrayList<Appliance> applianceArrayList){this.applianceArrayList = applianceArrayList;}
 
