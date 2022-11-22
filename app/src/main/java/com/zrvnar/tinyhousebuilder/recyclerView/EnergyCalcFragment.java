@@ -87,12 +87,6 @@ public class EnergyCalcFragment extends Fragment {
 
 
         ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("TV", 100,2));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
         RecyclerView recyclerView = view.findViewById(R.id.recycle);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

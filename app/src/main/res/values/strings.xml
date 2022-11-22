@@ -41,4 +41,7 @@
 
     <!-- Nav Title-->
     <string name="energy_calc">Energy Calculator</string>
+
+    <!-- Energy Calc-->
+    <string name="khw_lable">Total Kwh: </string>
 </resources>
