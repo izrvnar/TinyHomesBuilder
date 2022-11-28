@@ -41,11 +41,15 @@
 
     <!-- Nav Title-->
     <string name="energy_calc">Energy Calculator</string>
+    <string name="builder_list">All List of Builders</string>
+    <string name="build_step">Build Helper</string>
 
     <!-- Energy Calc-->
     <string name="khw_lable">Total Kwh: </string>
 
-    <!-- Lot View pager label -->
-    <string name="finding_land"> Finding Land </string>
+    <!-- View Pager Text -->
+    <string name="email_ButtonText"> Email</string>
+    <string name="call_buttonText">Call</string>
+    <string name="websiteButtonText">Website</string>
 
 </resources>

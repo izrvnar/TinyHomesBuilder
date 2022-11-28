@@ -29,7 +29,7 @@
         android:label="fragment_screen_slide_page"
         tools:layout="@layout/fragment_screen_slide_page" />
     <fragment
-        android:id="@+id/viewPagerHostFragment"
+        android:id="@+id/nav_viewpager"
         android:name="com.zrvnar.tinyhousebuilder.viewPager.ViewPagerHostFragment"
         android:label="fragment_view_pager_host"
         tools:layout="@layout/fragment_view_pager_host" />

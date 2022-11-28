@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -106,7 +108,6 @@ public class EnergyCalcFragment extends Fragment {
         // changing the text for calculator
         kwhTotal = view.findViewById(R.id.kwhTotal);
 
-
         return view;
     }
 
@@ -119,4 +120,10 @@ public class EnergyCalcFragment extends Fragment {
         System.out.println(totalKwh);
         return totalKwh;
     }
+
+    public static void refresh(){
+
+    }
+
+
 }
