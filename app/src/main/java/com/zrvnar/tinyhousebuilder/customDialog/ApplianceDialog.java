@@ -41,6 +41,7 @@ public class ApplianceDialog extends DialogFragment {
 
                     String name = appEditText.getText().toString();
                     int kwh = Integer.parseInt(kwhEditText.getText().toString());
+                    System.out.println(kwh);
                     int quantity = Integer.parseInt(quantityEditText.getText().toString());
                     try{
                         Appliance userInput = new Appliance(name,kwh,quantity);

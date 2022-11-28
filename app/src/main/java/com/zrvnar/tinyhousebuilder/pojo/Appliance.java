@@ -37,7 +37,7 @@ public class Appliance {
 
     @Override
     public String toString() {
-        return this.name;
+        return this.name + this.kwh +" " + this.quantity;
     }
 
 }

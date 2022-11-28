@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zrvnar.tinyhousebuilder.R;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
@@ -26,6 +27,8 @@ import java.util.ArrayList;
  */
 public class EnergyCalcFragment extends Fragment {
     ApplianceRecycleViewAdapterGrid adapterGrid;
+    TextView kwhTotal;
+    int totalKwh = 0;
 
 
 
@@ -71,6 +74,7 @@ public class EnergyCalcFragment extends Fragment {
 
     @Override
     public void onResume() {
+        kwhTotal.setText(String.valueOf(totalKwh()));
         adapterGrid.notifyDataSetChanged();
         super.onResume();
 
@@ -99,7 +103,20 @@ public class EnergyCalcFragment extends Fragment {
             recyclerView.setAdapter(adapterGrid);
         }
 
+        // changing the text for calculator
+        kwhTotal = view.findViewById(R.id.kwhTotal);
+
 
         return view;
+    }
+
+    public int totalKwh(){
+        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
+        for (Appliance appliance: applianceArrayList) {
+            System.out.println(appliance);
+            totalKwh += appliance.getKwh();
+        }
+        System.out.println(totalKwh);
+        return totalKwh;
     }
 }

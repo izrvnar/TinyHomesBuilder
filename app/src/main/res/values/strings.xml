@@ -44,4 +44,8 @@
 
     <!-- Energy Calc-->
     <string name="khw_lable">Total Kwh: </string>
+
+    <!-- Lot View pager label -->
+    <string name="finding_land"> Finding Land </string>
+
 </resources>
