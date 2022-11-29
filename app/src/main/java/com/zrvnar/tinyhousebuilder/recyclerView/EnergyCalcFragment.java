@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zrvnar.tinyhousebuilder.R;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
+import com.zrvnar.tinyhousebuilder.pojo.ApplianceSingleton;
 
 import java.util.ArrayList;
 
@@ -24,6 +28,11 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class EnergyCalcFragment extends Fragment {
+    ApplianceRecycleViewAdapterGrid adapterGrid;
+    TextView kwhTotal;
+    int totalKwh = 0;
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,6 +75,14 @@ public class EnergyCalcFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        kwhTotal.setText(String.valueOf(totalKwh()));
+        adapterGrid.notifyDataSetChanged();
+        super.onResume();
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_energy_calc, container, false);
@@ -75,25 +92,38 @@ public class EnergyCalcFragment extends Fragment {
         boolean isChecked = preferences.getBoolean("gridViewSwitch",false);
 
 
-        ArrayList<Appliance> applianceArrayList = new ArrayList<>();
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("TV", 100,2));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
-        applianceArrayList.add(new Appliance("LightBulb", 35,1));
+        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
         RecyclerView recyclerView = view.findViewById(R.id.recycle);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ApplianceRecycleViewAdapter(applianceArrayList));
+        adapterGrid = new ApplianceRecycleViewAdapterGrid(applianceArrayList);
 
         //toggle for grid view
         if (isChecked){
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-            recyclerView.setAdapter(new ApplianceRecycleViewAdapterGrid(applianceArrayList));
+            recyclerView.setAdapter(adapterGrid);
         }
 
+        // changing the text for calculator
+        kwhTotal = view.findViewById(R.id.kwhTotal);
 
         return view;
     }
+
+    public int totalKwh(){
+        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
+        for (Appliance appliance: applianceArrayList) {
+            System.out.println(appliance);
+            totalKwh += appliance.getKwh();
+        }
+        System.out.println(totalKwh);
+        return totalKwh;
+    }
+
+    public static void refresh(){
+
+    }
+
+
 }

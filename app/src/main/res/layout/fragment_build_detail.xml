@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.TinyHouseBuilder">
+
+
+    <TextView
+        android:id="@+id/build_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/titleText" />
+
+    <ImageView
+        android:id="@+id/build_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/view_pager_image1" />
+
+    <TextView
+        android:id="@+id/build_detial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/subtitleText" />
+
+    <Button
+        android:id="@+id/call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/call_buttonText"
+        app:icon="@drawable/ic_baseline_local_phone_24"
+        app:iconGravity="textStart" />
+
+    <Button
+        android:id="@+id/email_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_ButtonText"
+        app:icon="@drawable/ic_baseline_email_24"
+        app:iconGravity="textStart" />
+
+    <Button
+        android:id="@+id/website_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/websiteButtonText"
+        app:icon="@drawable/ic_baseline_web_24"
+        app:iconGravity="textStart" />
+</LinearLayout>
