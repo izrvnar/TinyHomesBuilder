@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/build_image"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="300dp"
         app:srcCompat="@drawable/view_pager_image1" />
 
     <TextView
@@ -36,20 +36,23 @@
         android:id="@+id/call_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/call_buttonText" />
+        android:text="@string/call_buttonText"
+        app:icon="@drawable/ic_baseline_local_phone_24"
+        app:iconGravity="textStart" />
 
     <Button
         android:id="@+id/email_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/email_ButtonText" />
+        android:text="@string/email_ButtonText"
+        app:icon="@drawable/ic_baseline_email_24"
+        app:iconGravity="textStart" />
 
     <Button
         android:id="@+id/website_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/websiteButtonText" />
+        android:text="@string/websiteButtonText"
+        app:icon="@drawable/ic_baseline_web_24"
+        app:iconGravity="textStart" />
 </LinearLayout>

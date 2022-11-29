@@ -25,6 +25,15 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
                     "Real Estate Agent"
                     );
 
+            case 1: return BuildDetailFragment.newInstance("Excavation",
+                    "Most tiny houses are on a concrete slab but still require some sort of digging!",
+                    R.drawable.excavator,
+                    "5195512872",
+                    "izdev@gmail.com",
+                    "https://www.google.com/search?q=realesate+agents+near+me&oq=realesate+agents+near+me&aqs=chrome..69i57j0i13i457i512j0i402l2j0i13i512l6.7252j0j7&sourceid=chrome&ie=UTF-8",
+                    "Excavator"
+                    );
+
             case 2: return BuildDetailFragment.newInstance("Exterior",
                     "Once there is a foundation you can begin to frame the house and add a roof",
                     R.drawable.lot_image,
@@ -36,7 +45,7 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
 
             case 3: return BuildDetailFragment.newInstance("Plumbing",
                     "You will also need to find a pluming solution",
-                    R.drawable.lot_image,
+                    R.drawable.plumber_image,
                     "5195512872",
                     "izdev@gmail.com",
                     "https://www.google.com/search?q=plumbers+near+me&sxsrf=ALiCzsYjXZz3Gp7SwMi7z0GtSgy3vljqvQ%3A1669677223426&ei=p0CFY-TFGd67qtsPsNOIgA4&oq=plu+near+me&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB5KBAhBGABKBAhGGABQAFjUAmDdDmgAcAF4AIABW4gBjAKSAQEzmAEAoAEBwAEB&sclient=gws-wiz-serp",
@@ -44,7 +53,7 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
 
             case 4: return BuildDetailFragment.newInstance("Electrical",
                     "You will also need to find an electrical solution by possibly using solar panels",
-                    R.drawable.lot_image,
+                    R.drawable.electrician_img,
                     "5195512872",
                     "izdev@gmail.com",
                     "Cgxnd3Mtd2l6LXNlcnAQAxgAMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB46CggAEEcQ1gQQsAM6CAgAEJIDELADOhIILhDHARDRAxDIAxCwAxBDGAFKBAhBGABKBAhGGABQnO4BWIfwAWCi9gFoBnABeACAAWqIAZoCkgEDMi4xmAEAoAEByAEMwAEB2gEECAEYCA",

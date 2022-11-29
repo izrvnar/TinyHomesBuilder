@@ -52,4 +52,9 @@
     <string name="call_buttonText">Call</string>
     <string name="websiteButtonText">Website</string>
 
+    <!-- Main Page Text -->
+    <string name="build_button">Start your Build</string>
+    <string name="calc_button">Energy Calculator</string>
+    <string name="book_your_Stay">Book Your Stay</string>
+
 </resources>
