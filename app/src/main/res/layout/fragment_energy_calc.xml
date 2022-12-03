@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/khw_lable"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/titleText"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="1"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/titleText"
@@ -65,12 +65,10 @@
                 android:id="@+id/imageView6"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="124dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/solar_img"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/kwhTotal"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -97,7 +95,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/solar_label" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/solarTotalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"

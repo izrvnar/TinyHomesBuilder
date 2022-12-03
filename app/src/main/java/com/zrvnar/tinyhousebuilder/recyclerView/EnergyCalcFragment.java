@@ -4,8 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,6 +28,7 @@ import java.util.ArrayList;
 public class EnergyCalcFragment extends Fragment {
     ApplianceRecycleViewAdapterGrid adapterGrid;
     TextView kwhTotal;
+    TextView solarTotal;
     int totalKwh;
 
 
@@ -77,6 +76,7 @@ public class EnergyCalcFragment extends Fragment {
     @Override
     public void onResume() {
         kwhTotal.setText(String.valueOf(totalKwh()));
+        solarTotal.setText(String.valueOf(solarPanelsNeeded()));
         adapterGrid.notifyDataSetChanged();
         super.onResume();
 
@@ -108,6 +108,10 @@ public class EnergyCalcFragment extends Fragment {
         // changing the text for calculator
         kwhTotal = view.findViewById(R.id.kwhTotal);
 
+        solarTotal = view.findViewById(R.id.solarTotalText);
+
+
+
         return view;
     }
 
@@ -119,6 +123,12 @@ public class EnergyCalcFragment extends Fragment {
         }
         System.out.println(totalKwh);
         return totalKwh;
+    }
+
+    public int solarPanelsNeeded(){
+        int solarPanel = 0;
+        solarPanel = totalKwh / 370;
+        return solarPanel;
     }
 
 

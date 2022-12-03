@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_homeView">
+    app:startDestination="@id/nav_energy_calc">
     <fragment
         android:id="@+id/nav_homeView"
         android:name="com.zrvnar.tinyhousebuilder.fragments.HomeFragment"
