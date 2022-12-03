@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.zrvnar.tinyhousebuilder.R;
 
@@ -75,39 +76,28 @@ public class HomeFragment extends Fragment {
             findNavController(view).navigate(R.id.action_nav_homeView_to_nav_viewpager);
         });
         Button airBNBButton = view.findViewById(R.id.airbnbButton);
-        airBNBButton.setOnClickListener(v -> {
-            openApp(getContext(), "com.airbnb.android&hl=en_CA&gl=US");
-        });
-
-
-
-
-
-
-
+        airBNBButton.setOnClickListener(this::openApp);
         return view;
 
-
     }
 
-    /** Open another app.
-     * @param context current Context, like Activity, App, or Service
-     * @param packageName the full package name of the app to open
-     * @return true if likely successful, false if unsuccessful
+    /**
+     * Checking to see if the air bnb app is installed
+     * If not open a web intent that sends the user to the website
+     * @param view
      */
-    public static boolean openApp(Context context, String packageName) {
-        PackageManager manager = context.getPackageManager();
-        try {
-            Intent i = manager.getLaunchIntentForPackage(packageName);
-            if (i == null) {
-                return false;
-                //throw new ActivityNotFoundException();
-            }
-            i.addCategory(Intent.CATEGORY_LAUNCHER);
-            context.startActivity(i);
-            return true;
-        } catch (ActivityNotFoundException e) {
-            return false;
+
+    public void openApp(View view){
+        Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("com.airbnb.android");
+
+        if(launchIntent !=null){
+            startActivity(launchIntent);
+        } else {
+            Toast.makeText(getContext(),"There is no appliation", Toast.LENGTH_LONG).show();
         }
     }
+
+
+
+
 }

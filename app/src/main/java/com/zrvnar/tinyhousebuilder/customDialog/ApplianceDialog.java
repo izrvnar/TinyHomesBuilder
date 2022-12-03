@@ -51,7 +51,6 @@ public class ApplianceDialog extends DialogFragment {
                         Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
                         toast.show();
                         System.out.println(applianceArrayList.size());
-                        EnergyCalcFragment.refresh();
 
 
                     } catch (Exception exception){

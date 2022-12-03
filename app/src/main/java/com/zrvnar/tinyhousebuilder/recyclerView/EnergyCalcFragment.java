@@ -121,9 +121,5 @@ public class EnergyCalcFragment extends Fragment {
         return totalKwh;
     }
 
-    public static void refresh(){
-
-    }
-
 
 }

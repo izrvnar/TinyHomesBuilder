@@ -9,8 +9,8 @@
         android:id="@+id/dataNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
         android:text="CompanyName"
         android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/titleText"
@@ -21,13 +21,11 @@
         android:id="@+id/dataTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
         android:text="Type"
         android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/subtitleText"
-        app:layout_constraintEnd_toStartOf="@+id/dataLocationText"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataNameText" />
 
@@ -35,11 +33,11 @@
         android:id="@+id/dataLocationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
         android:text="Location"
         android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/subtitleText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataTypeText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
