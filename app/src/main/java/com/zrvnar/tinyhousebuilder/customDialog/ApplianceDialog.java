@@ -51,6 +51,9 @@ public class ApplianceDialog extends DialogFragment {
                         Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
                         toast.show();
                         System.out.println(applianceArrayList.size());
+                        refresh();
+
+
 
 
                     } catch (Exception exception){
@@ -65,6 +68,15 @@ public class ApplianceDialog extends DialogFragment {
                 .setTitle("Create Appliance");
 
         return builder.create();
+    }
+
+    public static void refresh(){
+        Fragment fragment = null;
+        fragment.getParentFragmentManager().findFragmentByTag("EnergyCalcFragment");
+        FragmentTransaction ft = fragment.getActivity().getSupportFragmentManager().beginTransaction();
+        ft.detach(fragment);
+        ft.attach(fragment);
+        ft.commit();
     }
 
 
