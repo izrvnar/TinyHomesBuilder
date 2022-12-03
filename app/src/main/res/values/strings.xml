@@ -46,6 +46,7 @@
 
     <!-- Energy Calc-->
     <string name="khw_lable">Total Kwh: </string>
+    <string name="solarPanel_label">Number of Solar Panels needed:</string>
 
     <!-- View Pager Text -->
     <string name="email_ButtonText"> Email</string>

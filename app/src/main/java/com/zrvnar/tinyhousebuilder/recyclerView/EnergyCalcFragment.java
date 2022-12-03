@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class EnergyCalcFragment extends Fragment {
     ApplianceRecycleViewAdapterGrid adapterGrid;
     TextView kwhTotal;
-    int totalKwh = 0;
+    int totalKwh;
 
 
 
@@ -120,6 +120,7 @@ public class EnergyCalcFragment extends Fragment {
         System.out.println(totalKwh);
         return totalKwh;
     }
+
 
 
 }

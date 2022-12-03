@@ -51,8 +51,6 @@ public class ApplianceDialog extends DialogFragment {
                         Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
                         toast.show();
                         System.out.println(applianceArrayList.size());
-                        refresh();
-
 
 
 
@@ -69,17 +67,5 @@ public class ApplianceDialog extends DialogFragment {
 
         return builder.create();
     }
-
-    public static void refresh(){
-        Fragment fragment = null;
-        fragment.getParentFragmentManager().findFragmentByTag("EnergyCalcFragment");
-        FragmentTransaction ft = fragment.getActivity().getSupportFragmentManager().beginTransaction();
-        ft.detach(fragment);
-        ft.attach(fragment);
-        ft.commit();
-    }
-
-
-
 
 }
