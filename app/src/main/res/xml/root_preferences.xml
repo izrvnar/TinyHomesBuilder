@@ -24,4 +24,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/calc_settings">
+
+
+
+        <SwitchPreferenceCompat
+            app:key="calcSwitch"
+            app:summaryOff="@string/low_volt"
+            app:summaryOn="@string/high_volt"
+            app:title="@string/solar_panel_voltage"/>
+
+    </PreferenceCategory>
+
+
 </PreferenceScreen>

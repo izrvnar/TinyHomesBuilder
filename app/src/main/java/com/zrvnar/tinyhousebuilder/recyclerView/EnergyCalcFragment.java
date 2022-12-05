@@ -131,8 +131,16 @@ public class EnergyCalcFragment extends Fragment implements ApplianceDialog.onAp
      * @param totalKwh
      */
     public void calculateSolar(int totalKwh){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean isChecked = sharedPreferences.getBoolean("calcSwitch", false);
         totalKwh = Integer.parseInt(kwhTotal.getText().toString());
-        int solarTotalInt = totalKwh/370;
+        int solarTotalInt = totalKwh/150;
         solarTotal.setText(String.valueOf(solarTotalInt));
+
+        if (isChecked){
+            totalKwh = Integer.parseInt(kwhTotal.getText().toString());
+            solarTotalInt = totalKwh/370;
+            solarTotal.setText(String.valueOf(solarTotalInt));
+        }
     }
 }

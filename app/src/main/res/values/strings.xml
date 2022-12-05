@@ -63,4 +63,10 @@
     <string name="title">Tiny House Builder</string>
     <string name="description">Created by Ivan Zrvnar. All Rights reserved</string>
 
+    <!-- Calc settings text -->
+    <string name="calc_settings">Calculator Settings</string>
+    <string name ="solar_panel_voltage">Solar Panel Voltage</string>
+    <string name="low_volt">Low Volt: 150kwh</string>
+    <string name="high_volt">High Volt: 370kwh</string>
+
 </resources>
