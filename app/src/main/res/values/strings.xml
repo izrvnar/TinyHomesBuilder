@@ -59,4 +59,7 @@
     <string name="calc_button">Energy Calculator</string>
     <string name="book_your_Stay">Book Your Stay</string>
 
+    <string name="title">Tiny House Builder</string>
+    <string name="description">Created by Ivan Zrvnar. All Rights reserved</string>
+
 </resources>

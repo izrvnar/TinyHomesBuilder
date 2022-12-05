@@ -26,8 +26,26 @@ import com.zrvnar.tinyhousebuilder.recyclerView.EnergyCalcFragment;
 
 import java.util.ArrayList;
 //
-public class ApplianceDialog extends DialogFragment {
+public class ApplianceDialog extends DialogFragment  {
+
+    int totalKwh;
+
+    private ApplianceDialogListener callback;
+
     ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        try {
+            callback = (ApplianceDialogListener) getTargetFragment();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Calling Fragment must implement ApplianceDialogListener");
+        }
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -37,6 +55,7 @@ public class ApplianceDialog extends DialogFragment {
 
         builder.setView(view)
                 .setPositiveButton(R.string.saveButtonText, (dialog, which) -> {
+
                     EditText appEditText = view.findViewById(R.id.appliance_name);
                     EditText kwhEditText = view.findViewById(R.id.kwh_number);
                     EditText quantityEditText = view.findViewById(R.id.quantity_number);
@@ -65,5 +84,5 @@ public class ApplianceDialog extends DialogFragment {
         return builder.create();
     }
 
-    }
+}
 

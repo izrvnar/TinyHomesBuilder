@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -87,17 +88,18 @@ public class HomeFragment extends Fragment {
      * @param view
      */
 
-    public void openApp(View view){
+    public void openApp(View view) {
         Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("com.airbnb.android");
 
-        if(launchIntent !=null){
+        if (launchIntent != null) {
             startActivity(launchIntent);
         } else {
-            Toast.makeText(getContext(),"There is no appliation", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://www.airbnb.ca/tiny-canada/stays"));
+
+            if (i.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(i);
+            }
         }
     }
-
-
-
-
 }

@@ -32,7 +32,7 @@ import java.util.ArrayList;
  * Use the {@link EnergyCalcFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EnergyCalcFragment extends Fragment {
+public class EnergyCalcFragment extends Fragment implements ApplianceDialogListener {
     ApplianceRecycleViewAdapterGrid adapterGrid;
     ApplianceDialog applianceDialog;
     TextView kwhTotal;
@@ -152,5 +152,16 @@ public class EnergyCalcFragment extends Fragment {
     public void refreshFragment(){
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.detach(this).attach(this).commit();
+    }
+
+    @Override
+    public void onYesClick() {
+        refreshFragment();
+
+    }
+
+    @Override
+    public void onNoClick() {
+
     }
 }
