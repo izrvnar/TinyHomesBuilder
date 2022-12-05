@@ -46,6 +46,9 @@
 
     <!-- Energy Calc-->
     <string name="khw_lable">Total Kwh: </string>
+    <string name="solarPanel_label">Number of Solar Panels needed:</string>
+    <string name="appButtonString">Add Appliance</string>
+
 
     <!-- View Pager Text -->
     <string name="email_ButtonText"> Email</string>
@@ -56,5 +59,20 @@
     <string name="build_button">Start your Build</string>
     <string name="calc_button">Energy Calculator</string>
     <string name="book_your_Stay">Book Your Stay</string>
+
+    <string name="title">Tiny House Builder</string>
+    <string name="description">Created by Ivan Zrvnar. All Rights reserved</string>
+
+    <!-- Calc settings text -->
+    <string name="calc_settings">Calculator Settings</string>
+    <string name="solar_panel_voltage">Solar Panel Voltage</string>
+    <string name="low_volt">Low Volt: 150kwh</string>
+    <string name="high_volt">High Volt: 370kwh</string>
+
+    <string name="credit">Credits</string>
+    <string name="linktoicons">Link to Icons</string>
+    <string name="linktoimages">Link to Images</string>
+    <string name="linktodoc">Link to Documentation</string>
+
 
 </resources>

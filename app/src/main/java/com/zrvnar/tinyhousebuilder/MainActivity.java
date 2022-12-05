@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -32,15 +33,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         // setting the fab to a plus
         binding.appBarMain.fab.setImageResource(R.drawable.ic_baseline_add_24);
+        // displaying the fab
+        binding.appBarMain.fab.setVisibility(View.GONE);
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ApplianceDialog applianceDialog = new ApplianceDialog();
-                applianceDialog.show(getSupportFragmentManager(), "");
-
             }
+
+            //disabling the fab
+
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -74,6 +77,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
 }

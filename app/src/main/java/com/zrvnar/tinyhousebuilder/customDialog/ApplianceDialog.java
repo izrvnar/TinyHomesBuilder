@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,9 +26,21 @@ import com.zrvnar.tinyhousebuilder.recyclerView.ApplianceRecycleViewAdapterGrid;
 import com.zrvnar.tinyhousebuilder.recyclerView.EnergyCalcFragment;
 
 import java.util.ArrayList;
+//
+public class ApplianceDialog extends DialogFragment  {
 
-public class ApplianceDialog extends DialogFragment {
+    int totalKwh;
+
+    public interface onApplianceSelected{
+        void sendTotalKwh(int totalKwh);
+    }
+
+    public onApplianceSelected applianceSelected;
+
+
     ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
+
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -36,39 +49,78 @@ public class ApplianceDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.custom_dialog, null);
 
         builder.setView(view)
-                .setPositiveButton(R.string.saveButtonText, (dialog, which) -> {
-                    EditText appEditText = view.findViewById(R.id.appliance_name);
-                    EditText kwhEditText = view.findViewById(R.id.kwh_number);
-                    EditText quantityEditText = view.findViewById(R.id.quantity_number);
-
-                    String name = appEditText.getText().toString();
-                    int kwh = Integer.parseInt(kwhEditText.getText().toString());
-                    System.out.println(kwh);
-                    int quantity = Integer.parseInt(quantityEditText.getText().toString());
-                    try{
-                        Appliance userInput = new Appliance(name,kwh,quantity);
-                        applianceArrayList.add(userInput);
-                        Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
-                        toast.show();
-                        System.out.println(applianceArrayList.size());
-                        EnergyCalcFragment.refresh();
-
-
-                    } catch (Exception exception){
-                        exception.printStackTrace();
-                    }
-
-                })
-                .setNegativeButton(R.string.cancelButtonText, (dialog, which) -> {
-                    ApplianceDialog.this.getDialog().cancel();
-                })
                 .setIcon(R.drawable.energy_icon)
-                .setTitle("Create Appliance");
+                .setTitle("Add Appliance");
+                Button addApplianceButton = view.findViewById(R.id.addApplicanceButton);
+                Button cancelButton = view.findViewById(R.id.cancelApplicanceButton);
+                addApplianceButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        EditText appEditText = view.findViewById(R.id.appliance_name);
+                        EditText kwhEditText = view.findViewById(R.id.kwh_number);
+                        EditText quantityEditText = view.findViewById(R.id.quantity_number);
+
+                        String name = appEditText.getText().toString();
+                        int kwh = Integer.parseInt(kwhEditText.getText().toString());
+                        System.out.println(kwh);
+                        int quantity = Integer.parseInt(quantityEditText.getText().toString());
+                        try{
+                            Appliance userInput = new Appliance(name,kwh,quantity);
+                            applianceArrayList.add(userInput);
+                            Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
+                            toast.show();
+                            totalKwh = totalKwh();
+                            applianceSelected.sendTotalKwh(totalKwh);
+                            System.out.println(applianceArrayList.size());
+
+
+                        }catch (Exception exception){
+                            exception.printStackTrace();
+                        }
+                        getDialog().dismiss();
+
+                    }
+                });
+
+                //Cancel button
+                cancelButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getDialog().dismiss();
+                    }
+                });
+
+
 
         return builder.create();
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try{
+            applianceSelected = (onApplianceSelected) getTargetFragment();
+    } catch (ClassCastException e) {
+        throw new ClassCastException(e.getMessage());
+    }
+    }
 
+    /**
+     * This method calculates the total Kwh of all the appliances in the ArrayList
+     * @return
+     */
+
+    public int totalKwh(){
+        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
+        for (Appliance appliance: applianceArrayList) {
+            System.out.println(appliance);
+            totalKwh += appliance.getKwh() * appliance.getQuantity();
+        }
+        System.out.println(totalKwh);
+        return totalKwh;
+    }
 
 
 }
+

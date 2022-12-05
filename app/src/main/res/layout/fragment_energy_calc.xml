@@ -11,23 +11,27 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="9dp"
+        android:layout_height="400dp"
         app:cardBackgroundColor="@color/primaryColor"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -40,7 +44,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/khw_lable"
-                android:textSize="@dimen/subtitleText"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/titleText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,16 +53,73 @@
                 android:id="@+id/kwhTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:textSize="@dimen/subtitleText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/titleText"
+                app:layout_constraintStart_toEndOf="@+id/khw_label"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/solar_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/solar_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="@string/solarPanel_label"
+                android:textAlignment="center"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/titleText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/panel_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/solar_label" />
+
+            <TextView
+                android:id="@+id/solarTotalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="1"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/titleText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/solar_label" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_add_24"
+        android:text="@string/appButtonString"
+        android:textColor="@color/primaryTextColor"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="589dp" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
 

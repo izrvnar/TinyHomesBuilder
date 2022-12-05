@@ -17,7 +17,7 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0: return BuildDetailFragment.newInstance("Finding a Lot",
-                    "To begin your Tiny house build the first thing youll need is a lot",
+                    "To begin your Tiny house build the first thing you'll need is a lot. The benfit of a tiny house is that they can built almost anywhere! A popular method is to place the home on a trailer frame which makes the house mobile.",
                     R.drawable.lot_image,
                     "5195512872",
                     "izdev@gmail.com",
@@ -26,7 +26,7 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
                     );
 
             case 1: return BuildDetailFragment.newInstance("Excavation",
-                    "Most tiny houses are on a concrete slab but still require some sort of digging!",
+                    "If you decide to not place the house on wheels, You will need some sort of foundation. The most common is a concrete slab. This is a very simple process and can be done by a professional or yourself. If you are going to do it yourself, make sure you have the proper equipment and knowledge to do so.",
                     R.drawable.excavator,
                     "5195512872",
                     "izdev@gmail.com",
@@ -35,8 +35,8 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
                     );
 
             case 2: return BuildDetailFragment.newInstance("Exterior",
-                    "Once there is a foundation you can begin to frame the house and add a roof",
-                    R.drawable.lot_image,
+                    "The exterior of the house is the first thing people will see. It is important to make sure that the exterior is well insulated and weather proof. The most common exterior is metal siding. This is a very durable and easy to maintain material. The most common type of metal siding is steel. Steel is very durable and can be painted to match any color.",
+                    R.drawable.tiny_exterior,
                     "5195512872",
                     "izdev@gmail.com",
                     "https://www.google.com/search?q=framers+contractors+near+me&sxsrf=ALiCzsZ0i0ykoKdKVeHSFf-KPXDXt_LlPw%3A1669677214184&ei=nkCFY4_nCsqmqtsPktKKiAs&oq=framers++contranear+me&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgYIABAHEB4yBQgAEIYDMgUIABCGAzIFCAAQhgMyBQgAEIYDOgoIABBHENYEELADOggIABCSAxCwAzoKCAAQyQMQsAMQQzoHCAAQsAMQQzoECAAQQzoICAAQBxAeEAo6BwgAEIAEEA06CAgAEAgQBxAeOggIABAFEB4QDToICAAQCBAeEA1KBAhBGABKBAhGGABQ6wtYlxVgmxxoAXABeACAAWyIAYEFkgEDNS4ymAEAoAEByAEKwAEB&sclient=gws-wiz-serp",
@@ -44,7 +44,7 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
                     );
 
             case 3: return BuildDetailFragment.newInstance("Plumbing",
-                    "You will also need to find a pluming solution",
+                    "If you really want to make your tiny house stand out, you can add a bathroom. The most common type of bathroom is a composting toilet. This is a very simple and easy to maintain toilet. The only thing you need to do is empty the composting toilet every few months. However if you are able to connect to a sewer system, you can install a regular toilet.",
                     R.drawable.plumber_image,
                     "5195512872",
                     "izdev@gmail.com",
@@ -52,16 +52,16 @@ public class CustomViewPageAdapter extends FragmentStateAdapter {
                     "Plumber");
 
             case 4: return BuildDetailFragment.newInstance("Electrical",
-                    "You will also need to find an electrical solution by possibly using solar panels",
-                    R.drawable.electrician_img,
+                    "One of the advantages of a tiny house is that you are able to run solar panels. In the long term they are very cost effective and environmentally friendly. However if you are not able to run solar panels, you can run a regular electrical system. The most common type of electrical system is a 100 amp service. This is a very simple and easy to install system.",
+                    R.drawable.solar_panel_img,
                     "5195512872",
                     "izdev@gmail.com",
                     "Cgxnd3Mtd2l6LXNlcnAQAxgAMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB46CggAEEcQ1gQQsAM6CAgAEJIDELADOhIILhDHARDRAxDIAxCwAxBDGAFKBAhBGABKBAhGGABQnO4BWIfwAWCi9gFoBnABeACAAWqIAZoCkgEDMi4xmAEAoAEByAEMwAEB2gEECAEYCA",
                     "Electrician");
 
             case 5: return BuildDetailFragment.newInstance("Interior",
-                    "Things like HVAC, Drywall,",
-                    R.drawable.lot_image,
+                    "There are many different aspects of the interior of the house. The most important thing is to be conscious of the space. For heating and cooling a real fireplace can be a great option. For cooling ductless are very efficient and take up little space.  ",
+                    R.drawable.tiny_interior,
                     "5195512872",
                     "izdev@gmail.com",
                     "https://www.google.com/search?q=drywall+contractors+near+me&sxsrf=ALiCzsbfMNcZFRFahpkZrc5UAf3rqc1ztQ%3A1669677281902&ei=4UCFY9TZNtGmqtsPgeyHgA0&oq=drywnear+me&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB5KBAhBGABKBAhGGABQAFjxBmC-EWgAcAF4AIABaYgB4QKSAQMzLjGYAQCgAQHAAQE&sclient=gws-wiz-serp",

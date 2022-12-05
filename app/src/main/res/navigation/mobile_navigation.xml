@@ -7,13 +7,16 @@
     <fragment
         android:id="@+id/nav_homeView"
         android:name="com.zrvnar.tinyhousebuilder.fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_homeView_to_nav_viewpager"
             app:destination="@id/nav_viewpager"
 
             />
+        <action
+            android:id="@+id/action_nav_homeView_to_nav_energy_calc"
+            app:destination="@id/nav_energy_calc" />
     </fragment>
     <fragment
         android:id="@+id/nav_listView"
@@ -27,13 +30,18 @@
     <fragment
         android:id="@+id/nav_energy_calc"
         android:name="com.zrvnar.tinyhousebuilder.recyclerView.EnergyCalcFragment"
-        android:label="fragment_energy_calc"
+        android:label="@string/energy_calc"
         tools:layout="@layout/fragment_energy_calc" />
     <fragment
         android:id="@+id/nav_viewpager"
         android:name="com.zrvnar.tinyhousebuilder.viewPager.ViewPagerHostFragment"
-        android:label="fragment_view_pager_host"
+        android:label="@string/build_step"
         tools:layout="@layout/fragment_view_pager_host" />
+    <fragment
+        android:id="@+id/nav_credits"
+        android:name="com.zrvnar.tinyhousebuilder.fragments.CreditsFragment"
+        android:label="fragment_credits"
+        tools:layout="@layout/fragment_credits" />
 
 
 </navigation>
