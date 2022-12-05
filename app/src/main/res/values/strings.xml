@@ -49,6 +49,7 @@
     <string name="solarPanel_label">Number of Solar Panels needed:</string>
     <string name="appButtonString">Add Appliance</string>
 
+
     <!-- View Pager Text -->
     <string name="email_ButtonText"> Email</string>
     <string name="call_buttonText">Call</string>

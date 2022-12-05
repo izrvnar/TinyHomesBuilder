@@ -46,7 +46,7 @@
             android:id="@+id/cardView2"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="400dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:visibility="visible"

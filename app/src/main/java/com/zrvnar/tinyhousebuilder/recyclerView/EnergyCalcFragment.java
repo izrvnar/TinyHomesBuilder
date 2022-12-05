@@ -1,11 +1,8 @@
 package com.zrvnar.tinyhousebuilder.recyclerView;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
@@ -21,7 +18,6 @@ import android.widget.TextView;
 
 import com.zrvnar.tinyhousebuilder.R;
 import com.zrvnar.tinyhousebuilder.customDialog.ApplianceDialog;
-import com.zrvnar.tinyhousebuilder.customDialog.ApplianceDialogListener;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
 import com.zrvnar.tinyhousebuilder.pojo.ApplianceSingleton;
 
@@ -32,12 +28,17 @@ import java.util.ArrayList;
  * Use the {@link EnergyCalcFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EnergyCalcFragment extends Fragment implements ApplianceDialogListener {
+public class EnergyCalcFragment extends Fragment implements ApplianceDialog.onApplianceSelected{
     ApplianceRecycleViewAdapterGrid adapterGrid;
     ApplianceDialog applianceDialog;
     TextView kwhTotal;
     TextView solarTotal;
-    int totalKwh;
+    @Override
+    public void sendTotalKwh(int totalKwh) {
+        kwhTotal.setText(String.valueOf(totalKwh));
+        calculateSolar(totalKwh);
+
+    }
 
 
 
@@ -83,12 +84,8 @@ public class EnergyCalcFragment extends Fragment implements ApplianceDialogListe
 
     @Override
     public void onResume() {
-        kwhTotal.setText(String.valueOf(totalKwh()));
-        solarTotal.setText(String.valueOf(solarPanelsNeeded()));
         adapterGrid.notifyDataSetChanged();
-
         super.onResume();
-
     }
 
     @Override
@@ -116,52 +113,26 @@ public class EnergyCalcFragment extends Fragment implements ApplianceDialogListe
 
         // changing the text for calculator
         kwhTotal = view.findViewById(R.id.kwhTotal);
-
         solarTotal = view.findViewById(R.id.solarTotalText);
 
         Button addAppliance = view.findViewById(R.id.addButton);
         addAppliance.setOnClickListener(v -> {
 
             applianceDialog = new ApplianceDialog();
+            applianceDialog.setTargetFragment(EnergyCalcFragment.this,1);
             applianceDialog.show(getFragmentManager(), "ApplianceDialog");
         });
-
-
-
 
         return view;
     }
 
-    public int totalKwh(){
-        ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
-        for (Appliance appliance: applianceArrayList) {
-            System.out.println(appliance);
-            totalKwh += appliance.getKwh();
-        }
-        System.out.println(totalKwh);
-        return totalKwh;
-    }
-
-    public int solarPanelsNeeded(){
-        int solarPanel = 0;
-        solarPanel = totalKwh / 370;
-        return solarPanel;
-    }
-
-    // refreshes the fragment
-    public void refreshFragment(){
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.detach(this).attach(this).commit();
-    }
-
-    @Override
-    public void onYesClick() {
-        refreshFragment();
-
-    }
-
-    @Override
-    public void onNoClick() {
-
+    /**
+     * Calculates the solar panels needed to power the house
+     * @param totalKwh
+     */
+    public void calculateSolar(int totalKwh){
+        totalKwh = Integer.parseInt(kwhTotal.getText().toString());
+        int solarTotalInt = totalKwh/370;
+        solarTotal.setText(String.valueOf(solarTotalInt));
     }
 }
