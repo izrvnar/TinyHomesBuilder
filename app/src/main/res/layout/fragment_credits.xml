@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.CreditsFragment">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credit"
+        android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/titleText" />
+
+    <Button
+        android:id="@+id/iconButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/linktoicons"
+        app:icon="@drawable/ic_baseline_arrow_upward_24" />
+
+    <Button
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/linktoimages"
+        app:icon="@drawable/ic_baseline_arrow_upward_24" />
+
+    <Button
+        android:id="@+id/docButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/linktodoc"
+        app:icon="@drawable/ic_baseline_arrow_upward_24" />
+</LinearLayout>

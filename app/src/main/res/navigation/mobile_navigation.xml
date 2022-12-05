@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_energy_calc">
+    app:startDestination="@id/nav_homeView">
     <fragment
         android:id="@+id/nav_homeView"
         android:name="com.zrvnar.tinyhousebuilder.fragments.HomeFragment"
@@ -14,6 +14,9 @@
             app:destination="@id/nav_viewpager"
 
             />
+        <action
+            android:id="@+id/action_nav_homeView_to_nav_energy_calc"
+            app:destination="@id/nav_energy_calc" />
     </fragment>
     <fragment
         android:id="@+id/nav_listView"
@@ -34,6 +37,11 @@
         android:name="com.zrvnar.tinyhousebuilder.viewPager.ViewPagerHostFragment"
         android:label="@string/build_step"
         tools:layout="@layout/fragment_view_pager_host" />
+    <fragment
+        android:id="@+id/nav_credits"
+        android:name="com.zrvnar.tinyhousebuilder.fragments.CreditsFragment"
+        android:label="fragment_credits"
+        tools:layout="@layout/fragment_credits" />
 
 
 </navigation>

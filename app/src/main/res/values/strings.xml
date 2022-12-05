@@ -65,8 +65,14 @@
 
     <!-- Calc settings text -->
     <string name="calc_settings">Calculator Settings</string>
-    <string name ="solar_panel_voltage">Solar Panel Voltage</string>
+    <string name="solar_panel_voltage">Solar Panel Voltage</string>
     <string name="low_volt">Low Volt: 150kwh</string>
     <string name="high_volt">High Volt: 370kwh</string>
+
+    <string name="credit">Credits</string>
+    <string name="linktoicons">Link to Icons</string>
+    <string name="linktoimages">Link to Images</string>
+    <string name="linktodoc">Link to Documentation</string>
+
 
 </resources>

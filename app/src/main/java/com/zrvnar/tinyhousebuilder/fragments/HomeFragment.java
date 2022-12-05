@@ -76,6 +76,13 @@ public class HomeFragment extends Fragment {
         buildButton.setOnClickListener(v -> {
             findNavController(view).navigate(R.id.action_nav_homeView_to_nav_viewpager);
         });
+
+        Button energyCalc = view.findViewById(R.id.calculatorButton);
+        energyCalc.setOnClickListener(v->{
+            findNavController(view).navigate(R.id.action_nav_homeView_to_nav_energy_calc);
+
+
+        });
         Button airBNBButton = view.findViewById(R.id.airbnbButton);
         airBNBButton.setOnClickListener(this::openApp);
         return view;
