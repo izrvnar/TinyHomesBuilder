@@ -25,7 +25,7 @@ import com.zrvnar.tinyhousebuilder.recyclerView.ApplianceRecycleViewAdapterGrid;
 import com.zrvnar.tinyhousebuilder.recyclerView.EnergyCalcFragment;
 
 import java.util.ArrayList;
-
+//
 public class ApplianceDialog extends DialogFragment {
     ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
     @NonNull
@@ -51,10 +51,7 @@ public class ApplianceDialog extends DialogFragment {
                         Toast toast = Toast.makeText(getContext(), "Appliance Added!", Toast.LENGTH_LONG);
                         toast.show();
                         System.out.println(applianceArrayList.size());
-
-
-
-                    } catch (Exception exception){
+                    }catch (Exception exception){
                         exception.printStackTrace();
                     }
 
@@ -68,4 +65,5 @@ public class ApplianceDialog extends DialogFragment {
         return builder.create();
     }
 
-}
+    }
+

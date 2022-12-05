@@ -1,9 +1,13 @@
 package com.zrvnar.tinyhousebuilder.recyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,9 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.zrvnar.tinyhousebuilder.R;
+import com.zrvnar.tinyhousebuilder.customDialog.ApplianceDialog;
+import com.zrvnar.tinyhousebuilder.customDialog.ApplianceDialogListener;
 import com.zrvnar.tinyhousebuilder.pojo.Appliance;
 import com.zrvnar.tinyhousebuilder.pojo.ApplianceSingleton;
 
@@ -27,6 +34,7 @@ import java.util.ArrayList;
  */
 public class EnergyCalcFragment extends Fragment {
     ApplianceRecycleViewAdapterGrid adapterGrid;
+    ApplianceDialog applianceDialog;
     TextView kwhTotal;
     TextView solarTotal;
     int totalKwh;
@@ -78,6 +86,7 @@ public class EnergyCalcFragment extends Fragment {
         kwhTotal.setText(String.valueOf(totalKwh()));
         solarTotal.setText(String.valueOf(solarPanelsNeeded()));
         adapterGrid.notifyDataSetChanged();
+
         super.onResume();
 
     }
@@ -89,7 +98,7 @@ public class EnergyCalcFragment extends Fragment {
 
         // preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        boolean isChecked = preferences.getBoolean("gridViewSwitch",false);
+        boolean isChecked = preferences.getBoolean("gridViewSwitch", false);
 
 
         ArrayList<Appliance> applianceArrayList = ApplianceSingleton.getInstance().getApplianceArrayList();
@@ -100,7 +109,7 @@ public class EnergyCalcFragment extends Fragment {
         adapterGrid = new ApplianceRecycleViewAdapterGrid(applianceArrayList);
 
         //toggle for grid view
-        if (isChecked){
+        if (isChecked) {
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
             recyclerView.setAdapter(adapterGrid);
         }
@@ -109,6 +118,14 @@ public class EnergyCalcFragment extends Fragment {
         kwhTotal = view.findViewById(R.id.kwhTotal);
 
         solarTotal = view.findViewById(R.id.solarTotalText);
+
+        Button addAppliance = view.findViewById(R.id.addButton);
+        addAppliance.setOnClickListener(v -> {
+
+            applianceDialog = new ApplianceDialog();
+            applianceDialog.show(getFragmentManager(), "ApplianceDialog");
+        });
+
 
 
 
@@ -131,6 +148,9 @@ public class EnergyCalcFragment extends Fragment {
         return solarPanel;
     }
 
-
-
+    // refreshes the fragment
+    public void refreshFragment(){
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.detach(this).attach(this).commit();
+    }
 }

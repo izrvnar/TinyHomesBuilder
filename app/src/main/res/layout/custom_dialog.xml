@@ -5,18 +5,20 @@
     android:layout_height="wrap_content">
 
     <EditText
+        android:id="@+id/appliance_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appliance_name"
+        android:hint="Appliance Name"
         android:inputType="text"
-        android:hint="Appliance Name"/>
+        android:textColor="@color/primaryTextColor" />
 
     <EditText
+        android:id="@+id/kwh_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/kwh_number"
+        android:hint="@string/kwhHint"
         android:inputType="number"
-        android:hint="@string/kwhHint"/>
+        android:textColor="@color/primaryTextColor" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

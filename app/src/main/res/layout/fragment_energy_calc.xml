@@ -111,5 +111,15 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_add_24"
+        android:text="@string/appButtonString"
+        android:textColor="@color/primaryTextColor"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="589dp" />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>
 
