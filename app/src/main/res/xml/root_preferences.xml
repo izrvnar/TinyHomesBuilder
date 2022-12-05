@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- List View Layout-->
+    <PreferenceCategory app:title="@string/list_header">
+
+
+        <SwitchPreferenceCompat
+            app:key="listViewSwitch"
+            app:summaryOff="@string/list_summary_off"
+            app:summaryOn="@string/grid_summary_on"
+            app:title="@string/listView_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/recycleView_header">
+
+
+
+        <SwitchPreferenceCompat
+            app:key="gridViewSwitch"
+            app:summaryOff="@string/list_summary_off"
+            app:summaryOn="@string/grid_summary_on"
+            app:title="@string/recycle_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/calc_settings">
+
+
+
+        <SwitchPreferenceCompat
+            app:key="calcSwitch"
+            app:summaryOff="@string/low_volt"
+            app:summaryOn="@string/high_volt"
+            app:title="@string/solar_panel_voltage"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

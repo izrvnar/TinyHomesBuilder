@@ -1,0 +1,112 @@
+package com.zrvnar.tinyhousebuilder.fragments;
+
+import static androidx.navigation.Navigation.findNavController;
+
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.zrvnar.tinyhousebuilder.R;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class HomeFragment extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment HomeFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button buildButton = view.findViewById(R.id.buildButton);
+        buildButton.setOnClickListener(v -> {
+            findNavController(view).navigate(R.id.action_nav_homeView_to_nav_viewpager);
+        });
+
+        Button energyCalc = view.findViewById(R.id.calculatorButton);
+        energyCalc.setOnClickListener(v->{
+            findNavController(view).navigate(R.id.action_nav_homeView_to_nav_energy_calc);
+
+
+        });
+        Button airBNBButton = view.findViewById(R.id.airbnbButton);
+        airBNBButton.setOnClickListener(this::openApp);
+        return view;
+
+    }
+
+    /**
+     * Checking to see if the air bnb app is installed
+     * If not open a web intent that sends the user to the website
+     * @param view
+     */
+
+    public void openApp(View view) {
+        Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("com.airbnb.android");
+
+        if (launchIntent != null) {
+            startActivity(launchIntent);
+        } else {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://www.airbnb.ca/tiny-canada/stays"));
+
+            if (i.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(i);
+            }
+        }
+    }
+}

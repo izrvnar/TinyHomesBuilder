@@ -10,4 +10,69 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="companyNameLabel">Company Name:</string>
+    <string name="typeLabel">Type:</string>
+    <string name="locationLabel">Location:</string>
+
+    <string name="listViewLayout"></string>
+    <!-- Preference Titles -->
+    <string name="list_header">List Layout</string>
+    <string name="recycleView_header">Recycle Layout</string>
+    <string name="listView_title">List View Layout</string>
+
+    <!-- Messages Preferences -->
+
+
+    <!-- Switch Preferences -->
+    <string name="recycle_title">Grid View</string>
+    <string name="grid_summary_on">Complex View</string>
+    <string name="list_summary_off">Simple View</string>
+
+    <!-- Custom Dialog-->
+    <string name="applicanceHint">Appliance Name</string>
+    <string name="applianceLabelText">Appliance</string>
+    <string name="kwhHint">Kwh</string>
+    <string name="quantityHint">Quantity</string>
+    <string name="saveButtonText">Save</string>
+    <string name="cancelButtonText">Cancel</string>
+
+    <!-- Nav Title-->
+    <string name="energy_calc">Energy Calculator</string>
+    <string name="builder_list">All List of Builders</string>
+    <string name="build_step">Build Helper</string>
+
+    <!-- Energy Calc-->
+    <string name="khw_lable">Total Kwh: </string>
+    <string name="solarPanel_label">Number of Solar Panels needed:</string>
+    <string name="appButtonString">Add Appliance</string>
+
+
+    <!-- View Pager Text -->
+    <string name="email_ButtonText"> Email</string>
+    <string name="call_buttonText">Call</string>
+    <string name="websiteButtonText">Website</string>
+
+    <!-- Main Page Text -->
+    <string name="build_button">Start your Build</string>
+    <string name="calc_button">Energy Calculator</string>
+    <string name="book_your_Stay">Book Your Stay</string>
+
+    <string name="title">Tiny House Builder</string>
+    <string name="description">Created by Ivan Zrvnar. All Rights reserved</string>
+
+    <!-- Calc settings text -->
+    <string name="calc_settings">Calculator Settings</string>
+    <string name="solar_panel_voltage">Solar Panel Voltage</string>
+    <string name="low_volt">Low Volt: 150kwh</string>
+    <string name="high_volt">High Volt: 370kwh</string>
+
+    <string name="credit">Credits</string>
+    <string name="linktoicons">Link to Icons</string>
+    <string name="linktoimages">Link to Images</string>
+    <string name="linktodoc">Link to Documentation</string>
+
+
 </resources>
