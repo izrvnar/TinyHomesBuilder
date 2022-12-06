@@ -23,7 +23,7 @@ Any Android device that is running API level 21 or above.
 ![energyDashScreenShot](https://user-images.githubusercontent.com/72573842/206003902-63cd3344-99b9-4881-bcd0-f9f3f849e1d5.png)
 
 
-## Features![Uploading energyDashScreenShot.png…]()
+## Features
 
 
 - Energy Calculator
