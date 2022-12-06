@@ -18,11 +18,13 @@ Implementing a custom dialog and passing the information between two fragments p
 ## Prerequisites 
 Any Android device that is running API level 21 or above. 
 ## Screenshots
+![buildHelper](https://user-images.githubusercontent.com/72573842/206003035-0efd768d-f7c4-4eb0-a0ce-f2d24a71b26d.png)
+![energyCalc#1](https://user-images.githubusercontent.com/72573842/206003753-cd0ec6bf-3af8-483e-ab90-2ca45295b2ff.png)
+![energyDashScreenShot](https://user-images.githubusercontent.com/72573842/206003902-63cd3344-99b9-4881-bcd0-f9f3f849e1d5.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+## Features![Uploading energyDashScreenShot.png…]()
 
-## Features
 
 - Energy Calculator
 - Build Helper: Steper through a process of building a tiny house
